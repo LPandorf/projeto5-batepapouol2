@@ -1,0 +1,48 @@
+body{
+    background-color: paleturquoise;
+    font-family: "Roboto", sans-serif;
+    color: #333333;
+}
+
+header{
+    width: 100vw;
+    height: 80px;
+    padding: 11px 20px;
+    display: flex;
+    right: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+main{
+    
+}
+footer{
+    width: 100vw;
+    height: 80px;
+    bottom: 0px;
+    right: 0;
+    padding: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: white;
+}
+
+.escrevaaqui{
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.iconepessoas{
+    height: 30px;
+    width: 42px;
+}
+.iconeaviaozinho{
+    height: 26px;
+    width: 26px;
+}
