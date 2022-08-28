@@ -11,20 +11,32 @@
     <title>Batepapo uol</title>
   </head>
   <body>
+
+    <!--<div class="menu-fundo fundo-escondido" onclick="toggleMenu()"></div>-->
+
+    <!--parte principal-->
+    <!--topo-->
     <header>
-        <img src="logo 1.png"/>
-        <ion-icon class="iconepessoas" name="people"></ion-icon>
+      <img src="logo 1.png"/>
+      <ion-icon class="iconepessoas" name="people" onclick="toggleMenu()"></ion-icon>
     </header>
-
+    <!--chat-->
     <main>
-        <ul class="chat"></ul>
+      <ul class="chat"></ul>
     </main>
-
+    <!--rodapé-->
     <footer>
-        <div class="escrevaaqui">Escreva aqui...</div>
-        <ion-icon class="iconeaviaozinho" name="paper-plane-outline"></ion-icon>
+      <div class="escrevaaqui">
+        <input placeholder="Escreva aqui..." class="inputmsg"></input>
+        <span class="enviando">Enviando para Todos</span>
+      </div>
+      <button><ion-icon class="iconeaviaozinho" name="paper-plane-outline"></ion-icon></button>
     </footer>
 
+    <!--menu lateral-->
+    
+
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
