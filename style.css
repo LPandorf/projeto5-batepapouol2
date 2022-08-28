@@ -18,6 +18,7 @@ header{
     align-items: center;
     background-color: white;
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 main{
     width: 100%;
@@ -52,18 +53,38 @@ footer{
     position: fixed;
     background-color: white;
     box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
+    z-index: 2;
 }
 footer button {
     font-size: 30px;
     margin-bottom: 0 0 -5px 5px;
 }
 
-.escrevaaqui{
+/*.escrevaaqui{
     font-family: 'Roboto';
     font-style: italic;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
+}*/
+.escrevaaqui{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: -0.5px;
+    padding-left: 10px;
+}
+.escrevaaqui input{
+    margin-bottom: 10px;
+}
+.escrevaaqui input::placeholder{
+    font-style: italic;
+    color: #606060;
+    font-size: 16px;
+}
+.escrevaaqui span{
+    font-weight: 100;;
+    font-size: 15px;
 }
 
 .iconepessoas{
@@ -73,4 +94,32 @@ footer button {
 .iconeaviaozinho{
     height: 26px;
     width: 26px;
+}
+
+.entradaesaida{
+    background-color: #dcdcdc;
+}
+.publica{
+    background-color: #fff;
+}
+.privada{
+    background-color: #ffdede;
+}
+.hora{
+    right: 5px;
+    color: #b8b8b8;
+}
+
+.fundoescondido{
+    display: none;
+}
+.fundomenu{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    right: 0;
+    transition: all 200ms linear;
+    z-index: 3;
 }

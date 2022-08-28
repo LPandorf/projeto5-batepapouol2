@@ -1,4 +1,5 @@
-const urlAPI="";
+const urlAPI="https://mock-api.driven.com.br/api/v6/uol";
+
 let ultimaHora;
 let nick;
 
@@ -73,7 +74,7 @@ function entrar(){
     //como não fiz o bonus (pelo menos n ainda) o nome do usuario é pego por um prompt
     nick = prompt("Escreva seu nome");
     const promise=axios.post(`${urlAPI}/participants`, {name: nick});
-    promise.catch(errorEntrar);
+    promise.catch(erroEntrar);
     promise.then(carregarMsg);
 }
 
@@ -136,6 +137,64 @@ function mostrarMsg(resposta){
         }
     }
     const ultimaMsg = resposta.data[resposta.data.length-1].time;
+    //chama a função q rola para o fim das msg
     whats(ultimaMsg);
 }
 
+//função para enviar mensagem
+function enviar(){
+    const msg=document.querySelector("input").value;
+    axios.post(`${urlAPI}/message`, {
+        from: nick,
+        to: destinatario,
+        text: msg,
+        type: tipoDeMsg
+    });
+    console.log({
+        from: nick,
+        to: destinatario,
+        text: msg,
+        type: tipoDeMsg
+    });
+    document.querySelector("input").value="";
+}
+
+//função para carregar chat
+function carregarChat(){
+    //chama a função para carregar os usuarios
+    carregarUsuarios();
+    //chama a função para entrar na sala
+    entrar();
+    setInterval(carregarMsg, 3000);
+    setInterval(continuarConectado, 5000);
+}
+
+//função para escolher a visibilidade da mensagem
+function visibilidade(tipo, element){
+    tipoDeMsg=tipo;
+    const selecionado=document.querySelector(".visibilidade . selecionado");
+    if(selecionado){
+        selecionado.classList.remove("selecionado");
+    }
+    element.classList.add("selecionado");
+    //chama a função do menu lateral
+    toggleMenu();
+}
+
+//função do menu lateral
+function toggleMenu(){
+    const menuLateral= document.querySelector(".menu");
+    const conteudoDoChat= document.querySelector(".fundomenu");
+    menuLateral.classList.toggle("escondido");
+    conteudoDoChat.classList.toggle("fundoescondido");
+}
+
+//envio
+document.addEventListener("keyup", function (evento){
+    if (evento.key==="enter"){
+        enviar();
+    }
+});
+
+//chama a função para carregar o chat
+carregarChat();

@@ -11,19 +11,20 @@
     <title>Batepapo uol</title>
   </head>
   <body>
-
-    <!--<div class="menu-fundo fundo-escondido" onclick="toggleMenu()"></div>-->
-
+    <div class="fundomenu fundoescondido" onclick="toggleMenu()"></div>
+    
     <!--parte principal-->
     <!--topo-->
     <header>
       <img src="logo 1.png"/>
       <ion-icon class="iconepessoas" name="people" onclick="toggleMenu()"></ion-icon>
     </header>
+    
     <!--chat-->
     <main>
       <ul class="chat"></ul>
     </main>
+
     <!--rodapé-->
     <footer>
       <div class="escrevaaqui">
@@ -34,7 +35,30 @@
     </footer>
 
     <!--menu lateral-->
-    
+    <aside class="menu escondido">
+      <div class="x titulo">Escolha um contato para enviar mensagem:</div>
+      <ul class="contatos">
+        <li class="publico">
+          <ion-icon name="people"></ion-icon>
+          <span class="nome">Todos</span>
+          <ion-icon class="check" name="checkmark-outline"></ion-icon>
+        </li>
+      </ul>
+      <div class="x titulo">Escolha a visibilidade:</div>
+      <ul class="visibilidade">
+        <li class="publico selecionado" onclick="visibilidade('message', this)">
+          <ion-icon name="lock-open" ></ion-icon>
+          Público
+          <ion-icon class="check" name="checkmark-outline"></ion-icon>
+        </li>
+        <li class="privado" onclick="visibilidade('privatemsg', this)">
+          <ion-icon name="lock-closed" ></ion-icon>
+          Reservadamente
+          <ion-icon class="check" name="checkmark-outline"></ion-icon>
+        </li>
+      </ul>
+    </aside>
+   
 
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="script.js"></script>
