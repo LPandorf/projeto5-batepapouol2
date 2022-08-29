@@ -1,5 +1,5 @@
 body{
-    background-color: paleturquoise; //#f3f3f3;
+    background-color: #f3f3f3;
     font-family: "Roboto", sans-serif;
     color: #333333;
     display: flex;
@@ -60,6 +60,7 @@ footer button {
     margin-bottom: 0 0 -5px 5px;
 }
 
+/*escrevaaqui-----------------------------------*/
 .escrevaaqui{
     width: 100%;
     display: flex;
@@ -80,6 +81,7 @@ footer button {
     font-size: 15px;
 }
 
+/*icones--------------------------------------------------------*/
 .iconepessoas{
     height: 30px;
     width: 42px;
@@ -96,13 +98,15 @@ footer button {
     background-color: #fff;
 }
 .privada{
-    background-color: #ffdede;
+    background-color: palevioletred;/*#ffdede;*/
 }
 .hora{
     right: 5px;
     color: #b8b8b8;
 }
 
+
+/*menu------------------------------------------------------------*/
 .fundoescondido{
     display: none;
 }
@@ -169,3 +173,10 @@ aside.menu ion-icon{
 .selecionado .check{
     display: inline;
 }
+
+.margem{
+    height: 30px;
+    width: 100%;
+    background-color: white;
+}
+

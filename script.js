@@ -7,13 +7,13 @@ let tipoDeMsg ="message";
 let destinatario="Todos";
 
 //função para selecionar quem recebe a msg
-function selecionarUsuario(usuarioTo, elemento){
+function selecionarUsuario(usuario, elemento){
     const selecionado = document.querySelector(".contatos .selecionado");
     if(selecionado){
         selecionado.classList.remove("selecionado");
     }
     elemento.classList.add("selecionado");
-    destinatario=usuarioTo;
+    destinatario=usuario;
     //mexe menu lateral
     toggleMenu();
 }
@@ -24,7 +24,7 @@ function mostrarUsuarios(resposta){
     const contatos = document.querySelector(".contatos");
     for(let i=0; i<resposta.data.length; i++){
         const usuarioTemplate =`
-            <li class="visivel-publico" onclick="selectedUsuario('${resposta.data[i].name}', this)">
+            <li class="publico" onclick="selecionarUsuario('${resposta.data[i].name}', this)">
                 <ion-icon name="person-circle"></ion-icon>
                 <span class="nome">${resposta.data[i].name}</span>
                 <ion-icon class="check" name="checkmark-outline"></ion-icon>
@@ -54,7 +54,7 @@ function whats(ultimaMsg){
 
 //função para ver as mensagens privadas
 function visualizarPvd(tMsg){
-    if(tMsg.type==="private_message" && (tMsg.from===nick || tMsg.to===nick)){
+    if(tMsg.type==="privatemsg" && (tMsg.from===nick || tMsg.to===nick)){
         return true;
     }
     return false;
@@ -63,7 +63,7 @@ function visualizarPvd(tMsg){
 //função para carregar as mensagens
 function carregarMsg(){
     if(nick !== undefined){
-        const promise = axios.get(´${urlAPI}/messages´);
+        const promise = axios.get(`${urlAPI}/messages`);
         //promete a função q mostra as msgs
         promise.then(mostrarMsg);
     }
@@ -144,7 +144,7 @@ function mostrarMsg(resposta){
 //função para enviar mensagem
 function enviar(){
     const msg=document.querySelector("input").value;
-    axios.post(`${urlAPI}/message`, {
+    axios.post(`${urlAPI}/messages`, {
         from: nick,
         to: destinatario,
         text: msg,
@@ -172,7 +172,7 @@ function carregarChat(){
 //função para escolher a visibilidade da mensagem
 function visibilidade(tipo, element){
     tipoDeMsg=tipo;
-    const selecionado=document.querySelector(".visibilidade . selecionado");
+    const selecionado=document.querySelector(".visibilidade .selecionado");
     if(selecionado){
         selecionado.classList.remove("selecionado");
     }
