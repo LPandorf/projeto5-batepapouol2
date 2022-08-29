@@ -98,6 +98,8 @@ footer button {
 }
 .botao{
     text-decoration: none;
+    background-color: #fff;
+    border: #fff;
 }
 
 .entradaesaida{
@@ -188,3 +190,12 @@ aside.menu ion-icon{
     width: 100%;
 }
 
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+strong{
+    font-weight: 700;
+}
