@@ -7,7 +7,7 @@ body{
 }
 
 header{
-    width: 97vw;
+    width: 100vw;
     height: 80px;
     padding: 15px 25px;
     top: 0;
@@ -42,7 +42,7 @@ main li {
     word-break: break-word;
 }
 footer{
-    width: 97vw;
+    width: 100vw;
     height: 80px;
     bottom: 0px;
     left: 0;
@@ -70,14 +70,18 @@ footer button {
 }
 .escrevaaqui input{
     margin-bottom: 10px;
+    box-shadow: none;
+    border: none;
 }
 .escrevaaqui input::placeholder{
     font-style: italic;
     color: #606060;
     font-size: 16px;
+    box-shadow: none;
+    border: none;
 }
 .escrevaaqui span{
-    font-weight: 100;;
+    font-weight: 100;
     font-size: 15px;
 }
 
@@ -85,10 +89,15 @@ footer button {
 .iconepessoas{
     height: 30px;
     width: 42px;
+    margin-right: 40px;
 }
 .iconeaviaozinho{
     height: 26px;
     width: 26px;
+    margin-right: 40px;
+}
+.botao{
+    text-decoration: none;
 }
 
 .entradaesaida{
@@ -177,6 +186,5 @@ aside.menu ion-icon{
 .margem{
     height: 30px;
     width: 100%;
-    background-color: white;
 }
 

@@ -89,7 +89,9 @@ function continuarConectado(){
 //função de erro ao entrar na sala
 function erroEntrar(){
     console.log("ERRO");
+    alert("Erro: nome de usuário já utilizado, escolha outro")
     nick=undefined;
+    entrar();
 }
 
 //função para mostrar as mensagens, colocar no dominio
