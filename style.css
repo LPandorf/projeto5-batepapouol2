@@ -123,3 +123,56 @@ footer button {
     transition: all 200ms linear;
     z-index: 3;
 }
+
+aside.menu{
+    width: 210px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    transition: all 600ms linear;
+    overflow-y: scroll;
+    z-index: 4;
+}
+aside.menu.escondido{
+    right: -250px;
+}
+aside.menu li{
+    font-size: 14px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    word-break: break-word;
+}
+aside.menu ion-icon{
+    font-size: 20px;
+    margin-right: 10px;
+    margin-top: -2px;
+    flex-shrink:0;
+}
+
+
+.titulo{
+    text-align: center;
+    margin: 20px 0;
+    padding: 0 5px;
+    letter-spacing: -0.5px;
+    line-height: 20px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.check{
+    right: -5px;
+    top: -2px;
+    color: #61aa47;
+    display: none;
+}
+.selecionado .check{
+    display: inline;
+}
