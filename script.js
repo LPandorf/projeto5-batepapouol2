@@ -38,7 +38,7 @@ function carregarUsuarios(){
     console.log("CARREGAR USUARIOS");
     //promessa da função carregar, escopo local
     const promise = axios.get(`${urlAPI}/participants`);
-    promise.then(mostrar); 
+    promise.then(mostrarUsuarios); 
     //callback
 }
 

@@ -60,13 +60,6 @@ footer button {
     margin-bottom: 0 0 -5px 5px;
 }
 
-/*.escrevaaqui{
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-}*/
 .escrevaaqui{
     width: 100%;
     display: flex;
