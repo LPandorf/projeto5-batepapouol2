@@ -52,9 +52,10 @@ function whats(ultimaMsg){
     }
 }
 
+/////privada tava privatemsg antes
 //função para ver as mensagens privadas
 function visualizarPvd(tMsg){
-    if(tMsg.type==="privatemsg" && (tMsg.from===nick || tMsg.to===nick)){
+    if(tMsg.type==="privada" && (tMsg.from===nick || tMsg.to===nick)){
         return true;
     }
     return false;
